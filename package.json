@@ -1,0 +1,16 @@
+{
+  "name": "experiments.jonasroessum",
+  "version": "0.0.0",
+  "description": "This is a repository containing coding experiments, old as new.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://joglr@github.com/joglr/experiments.jonasroessum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joglr/experiments.jonasroessum/issues"
+  },
+  "homepage": "https://github.com/joglr/experiments.jonasroessum#readme"
+}

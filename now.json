@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "public": "public",
   "name": "experiments.jonasroessum.com",
   "alias": ["experiments.jonasroessum.com"]
 }
