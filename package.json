@@ -1,6 +1,6 @@
 {
   "name": "experiments.jonasroessum",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "This is a repository containing coding experiments, old as new.",
   "dependencies": {
     "fs-extra": "^7.0.1",
