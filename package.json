@@ -2,6 +2,18 @@
   "name": "experiments.jonasroessum",
   "version": "0.0.0",
   "description": "This is a repository containing coding experiments, old as new.",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-scripts": "^2.1.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && node ./scripts/build.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://joglr@github.com/joglr/experiments.jonasroessum.git"
@@ -12,5 +24,14 @@
   "bugs": {
     "url": "https://github.com/joglr/experiments.jonasroessum/issues"
   },
-  "homepage": "https://github.com/joglr/experiments.jonasroessum#readme"
+  "homepage": "https://experiments.jonasroessum.com",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
