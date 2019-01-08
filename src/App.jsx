@@ -7,10 +7,16 @@ function App() {
     <>
       <h1>Welcome to experiments</h1>
       <div>
-        {experiments && experiments.length === 0 && 'Loading experiments..'}
-        {experiments ? experiments.map(x => (
-          <a href={x}>{x}</a>
-        )) : 'Unable to load experiments'}
+        <ul>
+          {experiments && experiments.length === 0 && 'Loading experiments..'}
+          {experiments
+            ? experiments.map((x, key) => (
+                <li key={key}>
+                  <a href={x}>{x}</a>
+                </li>
+              ))
+            : 'Unable to load experiments'}
+        </ul>
       </div>
     </>
   )
@@ -24,7 +30,7 @@ function useExperiments() {
       .catch(e => {
         console.error(e)
       })
-      setExperiments(result)
+    setExperiments(result)
   }, [])
   return experiments
 }
