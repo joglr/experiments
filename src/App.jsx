@@ -5,6 +5,7 @@ const blacklist = [
   'js',
   'css'
 ]
+const filter = items => items.filter(x => !blacklist.find(x))
 
 function App() {
   const experiments = useExperiments()
