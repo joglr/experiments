@@ -1,0 +1,31 @@
+<style>
+html, body, iframe { height: 100%; width: 100%; }
+</style>
+<script src="//cdn.jsdelivr.net/requirejs/2.1.9/require.min.js"></script>
+<script>
+requirejs.config({
+
+  baseUrl: '//cdnjs.cloudflare.com/ajax/libs',
+
+  paths: {
+
+    jquery: "jquery/2.0.3/jquery.min",
+    annyang: "annyang/1.0.0/annyang.min",
+    prefixfree: "prefixfree/1.0.7/prefixfree.min",
+    
+    gapi: "https://apis.google.com/js/client.js?onload=gapiLoaded",
+    player: "https://www.youtube.com/iframe_api?stahp"
+
+  }
+
+});
+requirejs(['jquery'], function() {
+
+	console.log(parent.url);
+	
+	$(function() {
+		$('iframe').attr('src', localStorage['url']);
+	});
+});
+</script>
+<iframe id="i" src="" frameborder="0"></iframe>

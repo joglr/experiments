@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  background-color: #00A;
+  color: #fff;
+  font-size: 20px;
+  
+  user-select: none;
+  cursor: default;
+  
+}
+pre {
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 1em;
+  font-family: Consolas, "Lucida Console", "Courier New";
+ 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}

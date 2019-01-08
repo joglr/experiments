@@ -1,0 +1,41 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%; width: 100%;
+}
+
+body {
+	background: hsl(215, 88%, 26%) linear-gradient(hsl(215, 88%, 26%), hsl(222, 27%, 19%));
+	color: hsl(0, 0%, 90%);
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+}
+
+a {
+
+}
+
+h1, .command {
+	font: 300 4rem Lato;
+}
+
+.command {
+	position: absolute;
+	top: 0; right: 7px;
+	text-align: right;
+	display: none;
+}
+
+iframe.video-player {
+	position: absolute;
+	top: 90px; left: 50%;
+	transition: all 1s;
+	display: block;
+}
+iframe.video-player.fullscreen {
+	top: 0; left: 0;
+}

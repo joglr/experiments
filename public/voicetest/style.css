@@ -1,0 +1,26 @@
+body {
+	margin: 0;
+
+	background-color: black;
+	font-family: Helvetica, sans-serif;
+	text-align: center;
+
+}
+
+.wrapper {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0; 
+	background-color: white;
+
+	transition: 
+		color,
+		background-color,
+		font,
+		opacity;
+
+	transition-duration: 1s;
+
+}
+.wrapper.hidden {
+	opacity: 0;
+}

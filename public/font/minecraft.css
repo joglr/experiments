@@ -1,0 +1,5 @@
+@font-face {
+	font-family: 'minecraftfont';
+	src: url('minecraftfont.eot');
+	src: local('minecraftfont'), url('minecraftfont.woff') format('woff'), url('minecraftfont.ttf') format('truetype');
+}

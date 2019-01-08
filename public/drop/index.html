@@ -1,0 +1,143 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="/js/global.js"></script>
+<script>
+function $id(id) {
+	return document.querySelector(id);
+}
+
+$(function() {	
+
+	$(window).keypress(function(e) {
+		if(e.keyCode == 32) $('.drop section').toggle();
+	});
+
+	var reader = new FileReader(),
+	ls = window.localStorage.getItem('images') || window.localStorage.setItem('images', new Array());
+	
+	function $id(selector) {
+		return document.querySelector(selector);	
+	}
+	function showImg(file) {	
+		if (file.type.indexOf("image") == 0) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				var m = '<div class="img-frame"><div class="img-wrap"><button class="delete">X</button><img class="image" src="'+e.target.result+'"/s></div></div>';
+
+				$('#images .clear').before(m);
+			}
+			reader.readAsDataURL(file);
+		}
+		$('.delete').on('click', function() {
+			console.log($(this).parent('.img-frame'));
+			$(this).parent().parent().hide(1000);
+			console.log('img deleted');
+		});
+	}
+	function saveImages() {
+		window.localStorage.setItem('images', ls);	
+	}
+	
+	function drop(e) {
+		$(".drop section").removeClass('file-drag')
+		
+		reader.readAsDataURL(e.dataTransfer.files[0]);
+		e.preventDefault();
+		e.stopPropagation();
+		
+		var files = e.target.files || e.dataTransfer.files;
+		
+		for (var i = 0, f; f = files[i]; i++) showImg(files[i]);
+
+	}
+	function dragOver(e) {
+		$(".drop section").addClass('file-drag');	
+		
+		e.preventDefault();
+		e.stopPropagation();
+	}
+	function dragLeave(e) {
+		$(".drop section").removeClass('file-drag');
+		
+		e.preventDefault();
+		e.stopPropagation();	
+	}
+	$id('body').addEventListener("dragover", dragOver, false);
+	$id('body').addEventListener("dragleave", dragLeave, false);
+	$id('body').addEventListener("drop", drop, false);
+	
+	window.addEventListener('beforeunload', saveImages());
+});
+</script>
+<script src="/js/pf.js"></script>
+<style>
+body {
+	overflow-y: scroll;
+	background: url(drop-bg.png) no-repeat center center;
+}
+.drop section.file-drag {
+	border: 5px #ccc dashed;
+}
+#images {
+}
+.img-frame {
+	width: 25%;
+	float: left; clear: none;
+}
+.img-wrap {
+	width: auto;	
+	transition: all .5s;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+	border: 10px #fff solid;
+	position: relative;
+}
+.delete {
+	height: 25px; width: 25px; 
+	position: absolute;
+	bottom: 0; right: 0;
+	background: #f00 radial-gradient(center, #F00 0, #900 100%);
+	border-radius: 50%;
+	border: 2px #000 solid;
+	font-family: Verdana;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	z-index: 1000;
+	display: block;
+}
+.delete:hover {	
+}
+.delete:active {
+	
+}
+.image {
+	width: 100%;
+	background-color: #fff;
+	transition: all .5s;
+}
+.img-frame:nth-child(even) .img-wrap {
+	transform: rotate(1.5deg);
+	animation: drop-right 1s;
+}
+.img-frame:nth-child(odd) .img-wrap {
+	transform: rotate(-1.5deg);
+	animation: drop-left 1s;
+}
+.img-frame:hover .img-wrap {
+	box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+	transform: rotate(0deg) scale(1.5);
+	z-index: 300000;
+	position: relative;
+}
+.clear { clear: both; }
+@keyframes drop-left {
+	0% { transform: scale(10) rotate(90deg); opacity: 0; }	
+	100% { transform: scale(1) rotate(-1.5deg); opacity: 1; }	
+}
+@keyframes drop-right {
+	0% { transform: scale(10) rotate(-90deg); opacity: 0; }	
+	100% { transform: scale(1) rotate(1.5deg); opacity: 1; }	
+}
+</style>
+<div id="images">
+	<div class="clear"></div>
+</div>

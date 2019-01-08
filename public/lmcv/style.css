@@ -1,0 +1,11 @@
+.new:after {
+	content: ' (new!)';
+	color: hsla(130, 50%, 50%, 1);
+	font-weight: bold;
+}
+.time {
+	font-style: italic;
+}
+footer {
+	background-color: #f5f5f5;
+}

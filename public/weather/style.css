@@ -1,0 +1,162 @@
+@font-face {
+	font-family: 'sosa';
+	src: url('/font/sosa.eot');
+	src: 
+	local('?'), 
+	url('/font/sosa-regular-webfont.woff') format('woff'), 
+	url('/font/sosa-regular-webfont.ttf') format('truetype'),
+	url('/font/sosa-regular-webfont.svg') format('svg');
+}
+
+body, html {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	/*height: 100%;
+	width: 100%;*/
+}
+
+body {
+	background: hsla(0, 0%, 0%, 1) radial-gradient(circle, hsla(0, 0%, 18%, 1), transparent);
+	font-family: Lato, Helvetica, Arial, Verdana, sans-serif;
+	color: #fff;
+	overflow-x: hidden;
+}
+
+.instructions {
+
+	text-align: center;
+	font-weight: 300;
+
+}
+
+header {
+	height: 215px;
+	width: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -107.5px 0 0 -300px;
+	/*background-color: hsl(0, 0%, 18%);*/
+	/*opacity: 0;*/
+	z-index: 3000;
+}
+
+.weather, .clock {
+	font: 300 200%/1.5em Lato, Helvetica, Arial, Verdana, sans-serif;
+	display: inline-block;
+}
+.weather {
+	padding-top: 7px;
+	float: left;
+	display: none;
+	font-family: inherit;
+}
+.weather [data-icon].sosa {
+	font-size: 250%;
+}
+.clock {/*
+	width: 170px;*/
+	padding-top: 7px;
+	float: right;
+	font: 300 200%/1.5em Inconsolata, Monaco, "Lucida Console";
+	text-align: center;
+}
+.wind-deg {
+	transition: transform 1s;
+}
+.weather > div, .clock > div {
+	padding: 0 7px;
+}
+.weather div {
+	display: inline-block;
+}
+div.city {
+	cursor: pointer;
+}
+.city.input {
+	height: 48px; width: 200px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font: inherit;
+	color: inherit;
+	font-style: italic;
+	font-weight: 300;
+	border-radius: 4px;
+	padding: 0 7px;
+}
+.weather-wind {
+}
+.weather-wind .clear {
+	display: block;
+	clear: both;
+}
+.weather [data-icon].sosa {
+	vertical-align: super;
+	line-height: 1em;
+}
+[data-icon].sosa:before {
+	font-style: normal;
+	font-family: sosa;
+	content: attr(data-icon);
+	speak: none;
+}
+
+@media (min-width: 685px) and (max-width: 700px) {
+/*
+rgin-right: 0;
+
+	}*/
+
+}
+
+@media (max-width: 600px) {
+
+	.weather, .clock {
+
+		float: none;
+		clear: both;
+		margin: auto;
+
+	}
+
+	.clock { width: 100%; }
+
+	.weather .wind-deg {
+
+		display: none;
+	}
+
+	.clock .time {
+
+		text-align: left;
+		left: 7px;
+
+	}
+
+	.clock .date {
+	
+		text-align: right;
+		right: 7px;
+
+	}
+
+	.clock .time, .clock .date {
+
+		position: absolute;
+		margin-top: -20px;
+
+	}
+
+	.weather > .weather-data {
+
+		padding: 7px;
+
+	}
+
+	.weather-wind {
+		float: right;
+	}
+
+
+}

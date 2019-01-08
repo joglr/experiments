@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Intelligent Command Executer</title>
+
+	<meta charset="UTF-8">
+	<script src="//cdn.jsdelivr.net/requirejs/2.1.9/require.min.js"></script>
+	<script src="ice.js"></script>
+	<script src="/js/ga.js"></script>
+	<script>
+		if(window.location.hash.match("access_token") === null) {
+
+			function EncodeQueryData(data) {
+			   var ret = [];
+			   for (var d in data)
+			      ret.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
+			   return ret.join("&");
+			}
+
+
+			var data = {
+
+				client_id: '698697287916-vlee3nui2lh11b263438n602sdv5lmkg.apps.googleusercontent.com',
+				redirect_uri: 'http://jsrm.dk/ice',
+				response_type: 'token',
+
+				scope: 'https://www.googleapis.com/auth/youtube.readonly'
+
+			}
+
+			var	url = 'https://accounts.google.com/o/oauth2/auth?'+EncodeQueryData(data);
+
+			console.log(url);
+
+			window.location = url;
+
+		}
+
+		else {
+
+			window.token = window.location.hash.split('#acces_token=')[0].split('&')[0].substring("#acces_token=".length+1);
+
+		}
+
+		WebFontConfig = {
+			google: { families: [ 'Lato:300,400,700:latin' ] }
+		};
+
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+			'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>ICE</h1>
+	<div class="command"></div>
+	<iframe frameborder="0" class="video-player" id="video-player" src="http://www.youtube.com/embed?enablejsapi=1&amp;origin=http://jsrm.dk&amp;version=3&amp;controls=0&amp;iv_load_policy=3&amp;rel=0&amp;showinfo=0&amp;showsearch=0&amp;modestbranding=1"></iframe>
+</body>
+</html>

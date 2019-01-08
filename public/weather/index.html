@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Weather and time</title>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="//cdn.jsdelivr.net/requirejs/2.1.9/require.min.js"></script>
+	<script src="script.js"></script>
+	<script type="text/javascript">
+		WebFontConfig = {
+			google: { families: [ 'Lato:400,300,300italic:latin', 'Inconsolata::latin' ] }
+		};
+
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1 class="instructions">Click city name and write a new city/country/location to change weather location</h1>
+	<header class="clearfix">
+		<div class="weather">
+			<div class="weather-data">
+				<div class="temp" title="Temperature"></div>
+				<br />
+				<div class="humid" title="Humidity"></div>
+			</div>
+			<div class="weather-icon sosa"></div>
+			<div class="wind-deg sosa" title="Wind direction" data-icon="&icirc;"></div>
+			<div class="weather-wind">
+				<div class="clear">
+					<div class="city" title="Click to change city">Copenhagen</div>
+				</div>
+				<div class="clear">
+					<div class="wind-speed" title="Wind speed">Loading weather..</div>
+					<div class="pressure" title="Pressure"></div>
+				</div>
+			</div>
+		</div>
+		<div class="clock">
+			<div class="clearfix">
+				<div class="time">00:00:00</div>
+				<div class="date">w0 00-00-00</div>
+			</div>
+		</div>
+	</header>
+</body>
+</html>

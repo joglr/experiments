@@ -1,0 +1,211 @@
+@font-face {
+font-family: 'sosa';
+src: url('/font/sosa.eot');
+src: 
+local('?'), 
+url('/font/sosa.woff') format('woff'), 
+url('/font/sosa.ttf') format('truetype'),
+url('/font/sosa.svg') format('svg');
+}
+
+* {
+	margin: 0; padding: 0;
+	box-sizing: border-box;
+}
+body, html {
+	height: 100%; width: 100%;
+}
+body {
+	background: #000 radial-gradient(circle, #2f2f2f, transparent);
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	color: #fff;
+}
+
+.js-move {
+	line-height: 20rem;
+	font-size: 20rem;
+	position: absolute;
+	color: #fff;
+	text-shadow: 0 0 50px #fff;/*
+	transition: top 1s, left 1s;*/
+}
+
+img {
+	border: none;
+}
+
+.social-button {
+	margin-bottom: 7px;
+}
+
+.main {
+	height: 100%;
+	height: calc(100% - 85px);
+	position: relative;
+}
+
+/* Circle Menu */
+
+.circle-menu {
+	height: 400px; width: 400px;
+	border-radius: 200px;
+	list-style: none;
+	position: absolute;
+	top: 50%; left: 50%;
+	margin: -215px 0 0 -215px;
+	transition: all 1s;
+	z-index: 1000;
+}
+
+.circle-menu:active {
+	border-color: transparent;
+}
+
+label {
+	height: 100%; width: 100%;
+	display: block;
+	cursor: pointer;
+}
+#c { display: none; }
+/*
+#c:checked + ul.circle-menu li:nth-of-type(5) { opacity: 1; transition: .5s all 1s	}
+#c:checked + ul.circle-menu { width: 800px; margin-left: -400px; }
+*/
+
+body:hover ul.circle-menu {
+	width: 800px; margin-left: -400px;
+}
+
+body:hover ul.circle-menu li:nth-of-type(5) { opacity: 1; transition: .5s all 1s; }
+
+/* Links */
+
+a, a:visited {
+	color: #45c4dc;
+	text-decoration: none; 
+}
+a:hover {
+	color: #88ecff;
+}
+
+/* Menu items */
+
+li {
+	height: 200px; width: 200px;
+	float: left; clear: none;
+	font-size: 30px;
+	line-height: 1em;
+	position: absolute;
+	transition: box-shadow .5s;
+	box-shadow: 0 0 40px hsla(0, 0%, 10%, .4) inset;	
+}
+li:hover {
+	box-shadow: 0 0 50px #fff inset;
+}
+
+li:nth-of-type(1), li:nth-of-type(2) { top: 0; }
+li:nth-of-type(3), li:nth-of-type(4) { bottom: 0; }
+li:nth-of-type(odd) { left: 0; }
+li:nth-of-type(even) { right: 0; }
+
+li .link-text {
+	height: 1em; width: 1em;
+	position: absolute;
+	font: 150px/1em Sosa;
+	transition: all .5s, color 0s;
+	color: inherit;
+}
+
+li:nth-of-type(odd) .link-text { right: 5%; text-align: right; }
+li:nth-of-type(even) .link-text { left: 5%; }
+li:nth-of-type(1) .link-text, li:nth-of-type(2) .link-text { bottom: 5%; }
+li:nth-of-type(3) .link-text, li:nth-of-type(4) .link-text { top: 5%; }
+li:nth-of-type(1) { border-top-left-radius: 100%;		background-color: hsla(170, 100%, 20%, 1); }
+li:nth-of-type(2) { border-top-right-radius: 100%;		background-color: hsla(360, 60%, 47%, 1); }
+li:nth-of-type(3) { border-bottom-left-radius: 100%;	background-color: hsla(50, 100%, 37%, 1); }
+li:nth-of-type(4) { border-bottom-right-radius: 100%;	background-color: hsla(207, 79%, 40%, 1); }
+li:nth-of-type(5) { 
+  height: 400px; width: auto;
+  padding: 25px 15px;
+  top: 0; bottom: 0; 
+  left: 200px; right: 200px; 
+  opacity: 0; 
+  transition: all 1s; 
+  line-height: 1.2em;
+  font-weight: normal;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .3) inset;
+}
+
+img.codepen {
+  height: 100%; width: 100%;
+}
+
+
+
+header {
+	height: 75px; max-width: 700px;
+	_width: 700px;
+	margin: 0 auto;
+	background: rgba(255, 255, 255, 0.1);
+/*	position: absolute; top: 0; right: 0;*/
+	z-index: 3000;
+	/*
+	background-color: #0096ff;
+	background-image: linear-gradient(180deg, #0096ff, #045791);*/
+}
+
+.weather, .clock {
+	font-size: 130%;
+	line-height: 1.5em;
+	font-family: Monaco, "Lucida Console";
+	display: inline-block;
+}
+.weather {
+	float: left;
+	display: none;
+}
+.weather [data-icon] {
+	font-size: 250%;
+}
+.clock {
+	padding-top: 7px;
+	float: right;
+	text-align: center;
+}
+.wind-deg {
+	transition: transform 1s;
+}
+.weather > div, .clock > div {
+	padding: 0 7px;
+}
+.weather div {
+	display: inline-block;
+}
+.city {
+	cursor: pointer;
+}
+.city.input {
+	height: 31px; width: 200px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font: inherit;
+	color: inherit;
+	box-shadow: 0 0 7px rgba(255, 255, 255, .3) inset;
+	border-radius: 4px;
+	padding: 0 7px;
+}
+.weather [data-icon] {
+	vertical-align: super;
+	line-height: 1em;
+}
+[data-icon]:before {
+	font-style: normal;
+	font-family: sosa;
+	content: attr(data-icon);
+	speak: none;
+}
+
+.sosa { font-family: sosa; }
+

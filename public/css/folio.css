@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'sosa';
+    src: url('http://xn--rssum-vua.dk/font/sosa.eot');
+    src: 
+		local('?'), 
+		url('http://xn--rssum-vua.dk/font/sosa.woff') format('woff'), 
+		url('http://xn--rssum-vua.dk/font/sosa.ttf') format('truetype'),
+		url('http://xn--rssum-vua.dk/font/sosa.svg') format('svg');
+}
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%; width: 100%;
+}
+body {
+  background: #000 radial-gradient(circle, #2f2f2f, #1b1b1b);
+  font-family: sans-serif;
+}
+body:active ul.circle-menu {
+  width: 800px;
+  margin-left: -400px;
+}
+
+body:active li:nth-child(5) { opacity: 1; }
+/* Circle Menu */
+
+ul.circle-menu {
+  height: 400px; width: 400px;
+  list-style: none;
+  position: absolute;
+  top: 50%; left: 50%;
+  margin: -200px 0 0 -200px;
+  color: #fff;
+  transition: all 1s;
+}
+
+/* Links */
+
+li {
+  height: 200px; width: 200px;
+  float: left; clear: none;
+  font-size: 30px;
+  line-height: 1em;
+  position: absolute;
+}
+li:hover .link-text {
+  text-shadow: 0 0 50px rgba(255, 255, 255, 1);
+}
+
+li:nth-child(1), li:nth-child(2) { top: 0; }
+li:nth-child(3), li:nth-child(4) { bottom: 0; }
+li:nth-child(odd) { left: 0; }
+li:nth-child(even) { right: 0; }
+
+li .link-text {
+  height: 1em; width: 1em;
+  position: absolute;
+  font: 150px/1em Sosa;
+  transition: all 1s, text-shadow .5s;
+  color: inherit;
+  text-decoration: none;
+}
+
+li:nth-child(odd) .link-text { right: 5%; text-align: right; }
+li:nth-child(even) .link-text { left: 5%; }
+li:nth-child(1) .link-text, li:nth-child(2) .link-text { bottom: 5%; }
+li:nth-child(3) .link-text, li:nth-child(4) .link-text { top: 5%; }
+li:nth-child(1) { border-top-left-radius: 100%; background-color: #006755; }
+li:nth-child(2) { border-top-right-radius: 100%; background-color: #d21e4a; }
+li:nth-child(3) { border-bottom-left-radius: 100%; background-color: #ba60a5; }
+li:nth-child(4) { border-bottom-right-radius: 100%; background-color: #166fb8; }
+li:nth-child(5) { 
+  height: auto; width: auto;
+  padding: 50px;
+  top: 0; bottom: 0; 
+  left: 200px; right: 200px; 
+  opacity: 0; 
+  transition: 1s all 1s; 
+  line-height: 1.2em;
+  text-align: center;
+  font-weight: normal;
+}
+
+.sosa { font-family: sosa; }

@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'icons';
+    src: url('/font/sosa.eot');
+    src: 
+		local('?'), 
+		url('/font/sosa.woff') format('woff'), 
+		url('/font/sosa.ttf') format('truetype'),
+		url('/font/sosa.svg') format('svg');
+}
+
+::selection {
+	background: #9cf;
+	color: #eee;
+}
+
+body, html {
+	height: 100%; width: 100%;
+	overflow: hidden;
+	line-height: 1.4em;
+}
+
+body {
+	height: 100%; width: 100%;
+	background: #000;
+	color: #fff;
+	font: 1em Helvetica;
+	backface-visibility: hidden;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: #eee;	
+}
+a:hover {
+	color: #efefef;
+}
+
+.clearfix:after { 
+	height: 0;
+	display: block;
+	visibility: hidden;
+	clear: both; 
+}
+.hide {
+	height: 0; width: 0; 
+	visibility: hidden; opacity: 0;	
+}
+.icon-alone { display: inline-block; }
+[data-icon]:before {
+	content: attr(data-icon);
+	font-family: icons;
+	font-style: normal;
+	speak: none;
+}
+.full-fixed {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;		
+}
+.vertical-center {
+	position: absolute;
+	top: 50%;
+}
+
+.fade-in {
+	display: block !important;
+	animation: fadeIn 1s;
+	animation-fill-mode: forwards;
+}
+.fade-out {
+	display: none !important;
+	animation: fadeOut .5s;
+	animation-fill-mode: forwards;
+	transition: 0s display 1s;
+	
+}
+.fly-in { 	
+	animation: flyIn 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; display: block; }	
+	to { opacity: 1; }	
+}
+
+@keyframes fadeOut {
+	from { opacity: 1; }	
+	to { opacity: 0; display: none; }	
+}
+
+@keyframes flyIn {
+	from { transform: translateX(200%); }	
+	to { transform: translateX(0%); }	
+}

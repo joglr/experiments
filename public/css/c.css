@@ -1,0 +1,46 @@
+body {
+	background: #000 radial-gradient(circle, #777 0, #000 100%) no-repeat;
+}
+
+.tape {
+	height: 30px; width: 0%;
+	position: absolute;
+	background: #000 repeating-linear-gradient(-45deg, #000, #000 20px, #ff0 20px, #ff0 40px);
+	background-size: 100% 100%;
+	box-shadow: 0 3px 7px rgba(0, 0, 0, .5);
+	
+	transform: translateZ(0);
+	animation: rollOut ease-out 2s;
+	animation-fill-mode: forwards;
+}
+.tape:nth-child(1) {
+	top: -30px;
+	left: 200px;
+	transform: rotate(20deg);
+	background-position: left center;
+	transform-origin: left center;
+}
+.tape:nth-child(2) {
+	top: -30px;
+	right: -30px;
+	transform: rotate(-25deg);
+	background-position: right center;
+	transform-origin: right center;
+}
+.tape:nth-child(3) {
+	bottom: -30px;
+	left: 15%;
+	transform: rotate(-30deg);
+	background-position: left center;
+	transform-origin: left center;
+}
+.tape:nth-child(4) {
+	right: -30px;
+	transform: rotate(-22.5deg);
+	background-position: right center;
+	transform-origin: right center;
+}
+@keyframes rollOut {
+	from { width: 0%; }
+	to { width: 120%; }
+}
