@@ -5,11 +5,9 @@ const blacklist = [
   'js',
   'css'
 ]
-const filter = items => items.filter(x => !blacklist.find(x))
 
 function App() {
   const experiments = useExperiments()
-  const filter = items => items.filter(x => !blacklist.find(x))
   return (
     <>
       <h1>Welcome to experiments</h1>
@@ -37,7 +35,7 @@ function useExperiments() {
       .catch(e => {
         console.error(e)
       })
-      .then(filter)
+      .then(items => items && items.filter(x => !blacklist.find(x)))
     setExperiments(result)
   }, [])
   return experiments
