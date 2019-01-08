@@ -12,7 +12,7 @@ function App() {
           {experiments
             ? experiments.map((x, key) => (
                 <li key={key}>
-                  <a href={x}>{x}</a>
+                  <a href={`${x}/`}>{x}</a>
                 </li>
               ))
             : 'Unable to load experiments'}
