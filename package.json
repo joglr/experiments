@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts builda",
+    "build": "react-scripts build",
     "now-build": "react-scripts build && node ./scripts/build.js && mv build dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
