@@ -35,7 +35,7 @@ function useExperiments() {
       .catch(e => {
         console.error(e)
       })
-      .then(items => items && items.filter(x => !blacklist.find(x)))
+      .then(items => items && items.filter(x => !blacklist.includes(x)))
     setExperiments(result)
   }, [])
   return experiments
