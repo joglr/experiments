@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 
+const blacklist = [
+  'js',
+  'css'
+]
+
 function App() {
   const experiments = useExperiments()
+  const filter = items => items.filter(x => !blacklist.find(x))
   return (
     <>
       <h1>Welcome to experiments</h1>
@@ -30,6 +36,7 @@ function useExperiments() {
       .catch(e => {
         console.error(e)
       })
+      .then(filter)
     setExperiments(result)
   }, [])
   return experiments
