@@ -1,0 +1,50 @@
+body {
+	background: #000;
+	margin: 0; padding: 0;
+}
+.music-wrap, #music-player {
+	display: block;
+	margin: auto;
+	position: relative;
+}
+
+.player-overlay {
+	position: absolute;
+	height: 100%; width: 100%;
+	z-index: 1000;
+	cursor: pointer;
+}
+
+#music-player {
+	box-shadow: 0 0 60px #000;
+	transition: box-shadow .5s ease-out;
+}
+.help {
+	height: 50px; 
+	padding: 15px;
+	color: #eee;
+	position: absolute;
+	font-family: Roboto, sans-serif;
+}
+.q, .help-text {
+	position: absolute;
+	transition: opacity 1s;
+	z-index: 2000;
+}
+.q {
+	font: 2rem sans-serif;
+}
+.key, .function {
+	clear: none;
+}
+.key { width: 200px; float: left; }
+.function { float: right; }
+.help-text {
+	width: 400px;
+	opacity: 0;
+	background: #111;
+	padding: 15px;
+	border-radius: 7px;
+}
+.help:hover .help-text { opacity: 1; }
+.help:hover .q { opacity: 0; }

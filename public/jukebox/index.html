@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//cdn.jsdelivr.net/mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
+	<script src="https://apis.google.com/js/client.js?onload=load"></script>
+	<script type="/js/gauth.js"></script>
+	<script src="/js/pf.js"></script>
+	<script src="/js/global.js"></script>
+	<link rel="shortcut icon" href="/pages/music-icon.png" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="script.js"></script>
+</head>
+<body id="scrollHook">
+	<div class="help">
+		<span class="q">help</span>
+		<div class="help-text">
+			<div>
+				<div class="key">spacebar:</div>
+				<div class="function">play/pause video</div>
+			</div>
+			<div>
+				<div class="key">left &amp; right arrow:</div>
+				<div class="function">next/prev video</div>
+			</div>
+			<div>
+				<div class="key">scroll up &amp; down:</div>
+				<div class="function">volume</div>
+			</div>
+			<div>
+				<div class="key">up &amp; down arrow:</div>
+				<div class="function">volume</div>
+			</div>
+			<div>
+				<div class="key">esc:</div>
+				<div class="function">close window</div>
+			</div>
+		</div>
+	</div>
+	<div class="music-wrap">
+		<div class="player-overlay"></div>
+		<iframe frameborder="0" id="music-player"></iframe>
+		<script>
+			const origin = encodeURIComponent(window.location.origin)
+			document.getElementById("music-player").src = `http://www.youtube.com/embed?enablejsapi=1&amp;origin=${origin}&amp;version=3&amp;controls=0&amp;iv_load_policy=3&amp;rel=0&amp;showinfo=0&amp;showsearch=0&amp;modestbranding=1`
+
+		</script>
+	</div>
+</body>
+</html>
+
