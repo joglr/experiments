@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>YouTube Collaboration Watcher</title>
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script>
+	<script src="//apis.google.com/js/client.js?onload=load"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+	<script src="//cdn.jsdelivr.net/mousetrap/1.4.2/mousetrap.min.js"></script>
+	<script src="/js/h5utils.js"></script>
+	<script src="/js/pf.js"></script>
+	<script src="script.js"></script>
+</head>
+<body id="drop">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">YouTube CO-OP Watcher</a>
+		</div>
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<form class="navbar-form form-inline navbar-left add-view-form">
+      			<div class="form-group">
+					<input type="text" class="form-control video-url mousetrap" placeholder="URL goes here..">
+				</div>
+				<button type="submit" class="btn btn-primary add-view-btn">
+					<span class="glyphicon glyphicon-plus-sign"></span>
+				</button>
+			</form>
+			<div class="navbar-form form-inline navbar-left">
+				<div class="btn-group tools">
+					<button class="play-btn btn btn-default">
+						<span class="glyphicon glyphicon-play"></span>
+					</button>
+					<button class="toggle-fullscreen-btn btn btn-default">
+						<span class="glyphicon glyphicon-fullscreen"></span>
+					</button>
+					<button class="btn btn-default remove-views-btn">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+					<button class="btn btn-default sync-views-btn">
+						<span class="glyphicon glyphicon-retweet"></span>
+					</button>
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						Quality
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#" class="quality-btn btn-primary" data-quality="default">Auto</a></li>
+						<li><a href="#" class="quality-btn" data-quality="hd1080">1080p HD</a></li>
+						<li><a href="#" class="quality-btn" data-quality="hd720">720p HD</a></li>
+						<li><a href="#" class="quality-btn" data-quality="large">480p</a></li>
+						<li><a href="#" class="quality-btn" data-quality="medium">360p</a></li>
+						<li><a href="#" class="quality-btn" data-quality="small">240p</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="view-grid cf"></div>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34976555-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

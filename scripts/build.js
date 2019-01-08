@@ -1,8 +1,8 @@
 const fse = require('fs-extra')
 const path = require('path')
 
-const inDir = './public'
-const outDir = './build'
+const inDir = 'public'
+const outDir = 'build'
 
 ;(async () => {
   // await cleanAndMoveFromPublic()

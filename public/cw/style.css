@@ -1,0 +1,71 @@
+* {
+	box-sizing: border-box;
+	margin: 0; padding: 0;
+}
+body {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color: hsla(0, 0%, 10%, 1);
+	overflow: hidden;
+}
+
+iframe {
+	float: left; clear: none;
+}
+.view-grid {
+	transition: margin 1s ease-out;
+}
+.navbar {
+	border: none;
+	background-color: hsla(0, 0%, 90%, 0);
+	transition: background-color .25s 1s ease-out;
+}
+.navbar:hover {
+	background-color: hsla(0, 0%, 90%, 1);
+	transition: background-color .25s ease-out;
+}
+
+.video-url {
+	transition: opacity .25s 2s ease-out;
+	opacity: .3;
+}
+
+.navbar-brand,
+.add-view-btn,
+.tools {
+	opacity: 0;
+	transition: opacity .25s 1s ease-out;
+}
+.navbar:hover .navbar-brand,
+.navbar:hover .add-view-btn,
+.navbar:hover .tools {
+	opacity: 1;
+	transition: opacity .25s ease-out;
+}
+
+.navbar:hover .video-url {
+	opacity: 1;
+	transition: opacity .25s ease-out;;
+}
+
+.remove-views-btn {
+	color: red;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
