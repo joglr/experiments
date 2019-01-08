@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 
 const blacklist = [
+  'font',
   'js',
-  'css'
+  'php',
+  'css',
+  'img'
 ]
 
 function App() {
