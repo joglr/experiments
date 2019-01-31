@@ -151,7 +151,7 @@ requirejs(['jquery', 'annyang', 'prefixfree', 'gapi', 'youtube-player-api', 'goo
 
 				console.log('YouTube Data API Loaded');
 
-				gapi.client.setApiKey('AIzaSyAwBlCWRq7ADytArwF5yP9geE07L1v7iBY');
+				gapi.client.setApiKey('AIzaSyD4v0JpzqqkN-PPZkZj7zwPdJxyVV9K510');
 
 				console.log('Authenticated');
 
