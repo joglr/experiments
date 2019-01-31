@@ -1,6 +1,6 @@
 requirejs.config({
 
-	baseUrl: '//cdnjs.cloudflare.com/ajax/libs/',
+	baseUrl: 'https://cdnjs.cloudflare.com/ajax/libs/',
 
 	paths: {
 
@@ -116,7 +116,7 @@ requirejs(['jquery-color', 'jquery-rotate', 'prefixfree', 'modernizr', 'fittext'
 		$('.weather').fadeIn();
 
 		var apiKey = '21d0532e47c34617290c7e73f96601ac'
-		var url = 'http://api.openweathermap.org/data/2.5/weather?q='+window.city+'&callback=window.processWeather&units=metric&appid=' + apiKey;
+		var url = 'https://api.openweathermap.org/data/2.5/weather?q='+window.city+'&callback=window.processWeather&units=metric&appid=' + apiKey;
 
 		$.getScript(url)
 
