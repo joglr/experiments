@@ -19,16 +19,16 @@ function bindHandlers() {
 
 	$('.city.input').blur(function() { changeCity(this); });
 
-	$('.city.input').keypress(function(e) { 
+	$('.city.input').keypress(function(e) {
 
-		if(e.which == 13) changeCity(this); 
+		if(e.which == 13) changeCity(this);
 
 	});
 
 }
 
 function changeCity(el) {
-	var city = encodeURIComponent($(el).val()), 
+	var city = encodeURIComponent($(el).val()),
 	replace = {
 		'%C3%A6': 'ae',
 		'%C3%B8': 'oe',
@@ -59,7 +59,7 @@ function loadWeatherData(city) {
 
 	$('.city').text(city);
 
-	$.getScript('http://api.openweathermap.org/data/2.5/weather?q='+city+'&callback=updateWeather&units=metric');
+	$.getScript('https://api.openweathermap.org/data/2.5/weather?q='+city+'&callback=updateWeather&units=metric');
 	console.log('Getting weather for city "'+city+'"..');
 }
 
@@ -139,14 +139,14 @@ function updateWeather(data) {
 			$(this).fadeIn(function() { $('.wind-deg').rotate(data.wind.deg - 180); });
 
 		});
-	
+
 	} else { alert('Error '+data.cod); $('.weather').fadeIn(); }
 }
 
 $(function() {
 	var lsc = window.localStorage.getItem('city'), weatherTimeout, dateTimeout;
 	window.city = lsc != undefined ? lsc:'Roskilde';
-	
+
 	loadWeatherData(city);
 	updateTime();
 	bindHandlers();

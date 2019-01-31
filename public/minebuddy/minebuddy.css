@@ -17,28 +17,28 @@ body {
 
   font-size: 22px;
   font-family: Minecraft, sans-serif;
-  background: #1f1813 fixed url(http://www.wallpaperup.com/uploads/wallpapers/2012/09/03/12512/0729517a901dbcbe959a6ddaaea2a0fe.jpg) repeat center;
+  background: #1f1813 fixed url(https://www.wallpaperup.com/uploads/wallpapers/2012/09/03/12512/0729517a901dbcbe959a6ddaaea2a0fe.jpg) repeat center;
   background-size: 100%;
   color: #e0e0e0;
   text-shadow: 3px 3px 3px 0px #383838;
 
 }
 h1 {
-  
+
   color: #fff;
-  
+
 }
 h2 {
-  
+
   font-size: 1em;
   color: #a0a0a0;
-  
+
 }
 h1, h2 {
   font-weight: normal;
   margin-bottom: 22px;
   padding-left: 3px;
-  
+
 }
 ul {
   list-style: square;
@@ -52,7 +52,7 @@ input {
   background-color: #000;
   color: inherit;
   margin-bottom: 22px;
-  
+
 }
 input:focus {
   outline: none;

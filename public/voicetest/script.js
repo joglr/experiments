@@ -7,7 +7,7 @@ requirejs.config({
     jquery: "jquery/2.0.3/jquery.min",
     annyang: "annyang/1.0.0/annyang.min",
     prefixfree: "prefixfree/1.0.7/prefixfree.min",
-    
+
     gapi: "https://apis.google.com/js/client.js?onload=gapiLoaded",
     player: "https://www.youtube.com/iframe_api?stahp"
 
@@ -104,7 +104,7 @@ function onYouTubeApiLoad() {
 function showResponse(response) {
 
   console.log(response);
-    
+
     player = new YT.Player('player', {
         height: '390',
         width: '640',
@@ -142,13 +142,13 @@ function removeFirst() {
 function color(color) {
 
   $('.wrapper').css('color', color);
-  
+
 }
 
 function backgroundColor(color) {
 
   $('.wrapper').css('background-color', color);
-  
+
 }
 
 function size(size) {
@@ -156,11 +156,11 @@ function size(size) {
 }
 
 function searchGIMG(term) {
-  newWindow('http://www.google.com/search?site=imghp&tbm=isch&q='+term)
+  newWindow('https://www.google.com/search?site=imghp&tbm=isch&q='+term)
 }
 
 function searchG(term) {
-  newWindow('http://google.com/search?q='+term);
+  newWindow('https://google.com/search?q='+term);
 }
 
 
@@ -173,7 +173,7 @@ function searchYT(term) {
         part: 'id',
         q: term
     });
-    
+
     // Send the request to the API server,
     // and invoke onSearchRepsonse() with the response.
     request.execute(onSearchResponse);

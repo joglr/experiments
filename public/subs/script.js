@@ -1,5 +1,5 @@
 $(function() {
-	$.get('http://gdata.youtube.com/feeds/api/users/EthosLab', function(data) {
+	$.get('https://gdata.youtube.com/feeds/api/users/EthosLab', function(data) {
 
 		console.log(data);
 

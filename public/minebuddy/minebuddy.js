@@ -1,6 +1,6 @@
 require.config({
 
-	basePath: 'http://cdnjs.cloudflare.com/ajax/libs',
+	basePath: 'https://cdnjs.cloudflare.com/ajax/libs',
 
 	paths: {
 
@@ -24,8 +24,8 @@ $(function() {
 */
 function getFirstEntry(pages) {
 
-	for(var x in pages) 
-		if(squid.query.pages.hasOwnProperty(x)) 
+	for(var x in pages)
+		if(squid.query.pages.hasOwnProperty(x))
 			return pages[x];
 }
 
