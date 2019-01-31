@@ -8,7 +8,7 @@ requirejs.config({
 		'annyang': 'annyang/1.0.0/annyang.min',
 		'prefixfree': 'prefixfree/1.0.7/prefixfree.min',
 		'gapi': 'https://apis.google.com/js/client.js?onload=onGAPILoaded',
-		'google-js-api': 'https://www.google.com/jsapi?noext',
+		'google-js-api': 'https://apis.google.com/js/api.js?noext',
 		'youtube-player-api': 'https://www.youtube.com/iframe_api?noext',
 		'screenfull': 'screenfull.js/1.0.4/screenfull.min'
 
