@@ -1,8 +1,6 @@
-# experiments.jonasroessum
+# [Experiments](https://experiments.joglr.dev/)
 
 This is a repository containing coding experiments, old as new.
-
-https://experiments.jonasroessum.com
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
