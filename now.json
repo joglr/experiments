@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "name": "experiments.jonasroessum.com",
-  "alias": ["experiments.jonasroessum.com"],
-  "builds": [{
-    "src": "package.json",
-    "use": "@now/static-build"
-  }]
-}
