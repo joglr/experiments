@@ -1,5 +1,5 @@
 {
-  "name": "experiments.jonasroessum",
+  "name": "experiments",
   "version": "0.1.0",
   "description": "This is a repository containing coding experiments, old as new.",
   "dependencies": {
@@ -11,21 +11,20 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && node ./scripts/build.js",
-    "now-build": "npm run build && mv build dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://joglr@github.com/joglr/experiments.jonasroessum.git"
+    "url": "git+https://joglr@github.com/joglr/experiments.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joglr/experiments.jonasroessum/issues"
+    "url": "https://github.com/joglr/experiments/issues"
   },
-  "homepage": "https://experiments.jonasroessum.com",
+  "homepage": "https://experiments.joglr.dev",
   "eslintConfig": {
     "extends": "react-app"
   },

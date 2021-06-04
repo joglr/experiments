@@ -1,52 +1,38 @@
-$(function() {
-	$.getJSON('https://api.syfaro.net/minecraft/1.1/versions?callback=?', function(data) {
-		console.log(data);
+"use strict";
 
-		var snapshot = data.latest.snapshot,
-		release = data.latest.release,
-		snapshotServer = 'https://s3.amazonaws.com/Minecraft.Download/versions/'+snapshot.id+'/minecraft_server.'+snapshot.id+'.jar',
-		releaseServer = 'https://s3.amazonaws.com/Minecraft.Download/versions/'+release.id+'/minecraft_server.'+release.id+'.jar',
-		snapshotTime = snapshot.niceTime,
-		releaseTime = release.niceTime,
-		snapshotClass = '',
-		releaseClass = '';
+const fetchJSON = url => fetch(url)
+  .then(response => response.json())
+const corsProxy = url => `//cors-anywhere.herokuapp.com/${url}`
+const types = ['snapshot', 'release']
 
-		if(typeof localStorage != 'undefined') {
+window.addEventListener('DOMContentLoaded', () => {
+  fetchJSON('https://launchermeta.mojang.com/mc/game/version_manifest.json')
+    .then(data => {
+      return Promise.all([
+        fetchJSON(data.versions.find(x => x.id === data.latest.snapshot).url),
+        fetchJSON(data.versions.find(x => x.id === data.latest.release).url)
+      ])
+    })
+    .then(results => {
+      results.forEach((data, key) => {
+        const id = data.id
+        const serverUrl = data.downloads.server.url
+        const versionTime = moment(data.releaseTime).fromNow()
 
-			if(localStorage.getItem('snapshot') != snapshot) snapshotClass = 'new';
-			if(localStorage.getItem('release') != release) releaseClass = 'new';
+        const versionLink = document.querySelector(`a.${types[key]}.version`)
+        versionLink.textContent = id
+        versionLink.setAttribute('href', serverUrl)
+        versionLink.setAttribute('download', `${id}_server.jar`)
 
-		}
+        if (typeof localStorage !== 'undefined') {
+          if (localStorage.getItem(types[key]) != id) versionLink.classList.add('new')
+        }
 
-		$('a.snapshot.version').text(snapshot.id).attr('href', snapshotServer).addClass(snapshotClass);
-		$('a.release.version').text(release.id).attr('href', releaseServer).addClass(releaseClass);
+        document.querySelector(`.${types[key]}.time`).textContent = ' - ' + versionTime
 
-		$('.snapshot.time').text(' - '+snapshotTime);
-		$('.release.time').text(' - '+releaseTime);
-
-		for(var i = 0; i < data.versions.length; i++) {
-
-			var version = data.versions[i];
-
-			if(version.latest == 'true') {
-
-				if(version.type == 'snapshot')	snapshotTime = version.niceTime;
-				else if(version.type == 'release')	snapshotTime = version.niceTime;
-
-				if(snapshotTime != '' && releaseTime != '') break;
-			}
-
-		}
-
-		$('.snapshot.time').text(snapshotTime);
-		$('.release.time').text(releaseTime);
-
-		if(typeof localStorage != 'undefined') {
-
-			localStorage.setItem('snapshot', snapshot);
-			localStorage.setItem('release', release);
-
-		}
-
-	});
-});
+        if (typeof localStorage !== 'undefined') {
+          localStorage.setItem(types[key], id)
+        }
+      })
+  })
+})
